@@ -53,5 +53,57 @@ document.addEventListener('DOMContentLoaded', function() {
             : '<i class="far fa-star"></i> Favorito';
     }
     
+    // Eventos de los botones de acción
+    document.getElementById('btnCall').addEventListener('click', function() {
+        alert(`Llamando a ${contacto.nombre} al número ${contacto.telefono}`);
+    });
     
+    document.getElementById('btnMessage').addEventListener('click', function() {
+        alert(`Enviando mensaje a ${contacto.nombre}`);
+    });
+    
+    document.getElementById('btnEmail').addEventListener('click', function() {
+        alert(`Enviando correo a ${contacto.correo}`);
+    });
+    
+    document.getElementById('btnFavorite').addEventListener('click', function() {
+        contacto.favorito = !contacto.favorito;
+        
+        // Se Actualiza el localStorage si es necesario sino noo
+        const contactosGuardados = JSON.parse(localStorage.getItem('contactos')) || [];
+        const index = contactosGuardados.findIndex(c => c.id == contacto.id);
+        if (index !== -1) {
+            contactosGuardados[index].favorito = contacto.favorito;
+            localStorage.setItem('contactos', JSON.stringify(contactosGuardados));
+        }
+        
+        // Codigo para actualizar boton
+        this.innerHTML = contacto.favorito 
+            ? '<i class="fas fa-star"></i> Favorito' 
+            : '<i class="far fa-star"></i> Favorito';
+        
+        // Se agrego un prqueño de efecto visual
+        this.style.backgroundColor = contacto.favorito 
+            ? 'rgba(255, 215, 0, 0.3)' 
+            : 'rgba(255, 255, 255, 0.2)';
+        
+        // Animacion 
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 200);
+    });
+    
+    // Efecto de líneas como de libreta 
+    const notebookLines = document.querySelector('.notebook-lines');
+    if (notebookLines) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            notebookLines.style.backgroundPositionY = `${scrollPosition}px`;
+        });
+    }
+    
+    // Aqui se muestra el contacto
+    mostrarDetalleContacto();
+
 });
