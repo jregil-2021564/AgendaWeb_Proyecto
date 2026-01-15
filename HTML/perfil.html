@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | AppKinal</title>
+    <link rel="stylesheet" href="../CSS/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/compartido.css">
+    <link rel="icon" href="../img/iconoagenda.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-address-book"></i>
+                <h1>Mi Agenda</h1>
+            </div>
+            <div class="user-info">
+                <span id="userNameHeader"></span>
+                <a href="../HTML/index.html" class="profile-link active">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../HTML/contactos.html">
+                        <i class="fas fa-users"></i>
+                        <span>Contactos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/favoritos.html">
+                        <i class="fas fa-star"></i>
+                        <span>Favoritos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/todo-list.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>To-Do List</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="content-header">
+                <h2><i class="fas fa-user-circle"></i> Mi Perfil</h2>
+                <button class="btn-edit" id="btnEditProfile">
+                    <i class="fas fa-edit"></i> Editar Perfil
+                </button>
+            </div>
+            
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img id="userAvatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar">
+                        <div class="avatar-overlay">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="userFullName">Usuario Demo</h1>
+                        <p class="user-title" id="userTitle">Miembro desde Enero 2024</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number" id="totalContacts">0</span>
+                                <span class="stat-label">Contactos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="totalFavorites">0</span>
+                                <span class="stat-label">Favoritos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="totalTasks">0</span>
+                                <span class="stat-label">Tareas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-details-grid">
+                    <div class="detail-section">
+                        <h3><i class="fas fa-info-circle"></i> Información Personal</h3>
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <span class="detail-label">Nombre completo:</span>
+                                <span class="detail-value" id="profileName">Usuario Demo</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Correo electrónico:</span>
+                                <span class="detail-value" id="profileEmail">usuario@gmail.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Teléfono:</span>
+                                <span class="detail-value" id="profilePhone">+502 87962541</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Fecha de registro:</span>
+                                <span class="detail-value" id="profileJoinDate">15 Enero 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3><i class="fas fa-cog"></i> Configuración de la Cuenta</h3>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <i class="fas fa-bell"></i>
+                                <div class="setting-info">
+                                    <span class="setting-title">Notificaciones</span>
+                                    <span class="setting-desc">Recibir notificaciones por correo</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <i class="fas fa-palette"></i>
+                                <div class="setting-info">
+                                    <span class="setting-title">Tema Oscuro</span>
+                                    <span class="setting-desc">Cambiar a modo oscuro</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="darkModeToggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <i class="fas fa-language"></i>
+                                <div class="setting-info">
+                                    <span class="setting-title">Idioma</span>
+                                    <span class="setting-desc">Español (ES)</span>
+                                </div>
+                                <div class="language-selector">
+                                    <select>
+                                        <option selected>Español</option>
+                                        <option>English</option>
+                                        <option>Français</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section full-width">
+                        <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
+                        <div class="security-actions">
+                            <button class="security-btn" id="btnChangePassword">
+                                <i class="fas fa-key"></i> Cambiar Contraseña
+                            </button>
+                            <button class="security-btn" id="btnTwoFactor">
+                                <i class="fas fa-mobile-alt"></i> Autenticación en Dos Pasos
+                            </button>
+                            <button class="security-btn warning" id="btnDeleteAccount">
+                                <i class="fas fa-trash-alt"></i> Eliminar Cuenta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notebook-lines"></div>
+        </main>
+    </div>
+    
+    <script src="../js/perfil.js"></script>
+    <script src="../js/compartido.js"></script>
+</body>
+</html>
