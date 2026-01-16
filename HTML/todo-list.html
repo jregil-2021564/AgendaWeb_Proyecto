@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas | AppKinal</title>
+    <link rel="stylesheet" href="../CSS/todo-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/compartido.css">
+    <link rel="icon" href="../img/iconoagenda.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-address-book"></i>
+                <h1>Mi Agenda</h1>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <a href="../HTML/perfil.html" class="profile-link">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../HTML/contactos.html">
+                        <i class="fas fa-users"></i>
+                        <span>Contactos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/favoritos.html">
+                        <i class="fas fa-star"></i>
+                        <span>Favoritos</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="../HTML/todo-list.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>To-Do List</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="content-header">
+                <h2><i class="fas fa-tasks"></i> Mi Lista de Tareas</h2>
+                <div class="stats">
+                    <span class="stat-item">
+                        <i class="fas fa-list-check"></i>
+                        <span id="totalTasks">0</span> tareas
+                    </span>
+                    <span class="stat-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="completedTasks">0</span> completadas
+                    </span>
+                </div>
+            </div>
+            
+            <div class="contact-details-grid">
+                    <div class="detail-section">
+                        <h3><i class="fas fa-info-circle"></i> Información Personal</h3>
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <span class="detail-label">Teléfono:</span>
+                                <span class="detail-value" id="contactPhone"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Correo:</span>
+                                <span class="detail-value" id="contactEmail"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Dirección:</span>
+                                <span class="detail-value" id="contactAddress"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Fecha Nacimiento:</span>
+                                <span class="detail-value" id="contactBirthday">15/05/1995</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3><i class="fas fa-briefcase"></i> Información Profesional</h3>
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <span class="detail-label">Empresa:</span>
+                                <span class="detail-value" id="contactCompanyFull"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cargo:</span>
+                                <span class="detail-value" id="contactPosition">No especificado</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Departamento:</span>
+                                <span class="detail-value" id="contactDepartment">No especificado</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section full-width">
+                        <h3><i class="fas fa-sticky-note"></i> Notas</h3>
+                        <div class="notes-container">
+                            <p id="contactNotes">No hay notas adicionales para este contacto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <script src="../js/todo-list.js"></script>
+    <script src="../js/compartido.js"></script>
+</body>
+</html>
