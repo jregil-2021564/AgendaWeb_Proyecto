@@ -1,0 +1,76 @@
+/* Codigo para poner cambiar de color la pagina de blanco y de neegro */
+:root {
+    --primary-color: #2e4a7a;
+    --primary-dark: #1a3157;
+    --primary-light: #3a5f9a;
+    --secondary-color: #ffd700;
+    --accent-color: #2e8b57;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --success-color: #27ae60;
+    --light-color: #f8f9fa;
+    --dark-color: #333;
+    --gray-color: #666;
+    --border-color: #e0e0e0;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dark-mode {
+    --light-color: #1a1a1a;
+    --dark-color: #f0f0f0;
+    --gray-color: #aaa;
+    --border-color: #444;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-mode .main-content {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .sidebar,
+.dark-mode .contact-card,
+.dark-mode .favorite-card,
+.dark-mode .todo-container,
+.dark-mode .form-container,
+.dark-mode .contact-detail-container,
+.dark-mode .profile-container,
+.dark-mode .detail-section,
+.dark-mode .settings-list .setting-item {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f0f0f0;
+}
+
+.dark-mode .input-group input,
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea,
+.dark-mode #taskInput,
+.dark-mode #prioritySelect,
+.dark-mode .modal-input,
+.dark-mode .modal-select {
+    background-color: #333;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+.dark-mode .input-group label,
+.dark-mode .form-group label,
+.dark-mode .detail-label,
+.dark-mode .setting-title {
+    color: #ddd;
+}
+
+.dark-mode .nav-item a {
+    color: #ccc;
+}
+
+.dark-mode .nav-item a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .notebook-lines {
+    background: linear-gradient(to bottom, transparent 95%, rgba(255, 255, 255, 0.05) 95%);
+}
