@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactsList = document.getElementById('contactsList');
-    
-    // Datos de ejemplo de contactos
+
     const contactos = [
         {
             id: 1,
@@ -64,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             favorito: false
         }
     ];
-    
-    // Mostrar contactos
+
     function mostrarContactos() {
         contactsList.innerHTML = '';
         
@@ -108,16 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="${contacto.favorito ? 'fas' : 'far'} fa-star"></i>
                 </button>
             `;
-            
-            // Añadir evento de clic para ver detalles
+
             card.addEventListener('click', function(e) {
                 if (!e.target.closest('.favorite-btn')) {
                     localStorage.setItem('contactoSeleccionado', JSON.stringify(contacto));
                     window.location.href = `detalle-contacto.html?id=${contacto.id}`;
                 }
             });
-            
-            // Añadir evento al botón de favorito
+
             const favBtn = card.querySelector('.favorite-btn');
             favBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
@@ -127,15 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
             contactsList.appendChild(card);
         });
     }
-    
-    // Alternar estado de favorito
+
     function toggleFavorito(id) {
         const contacto = contactos.find(c => c.id === id);
         if (contacto) {
             contacto.favorito = !contacto.favorito;
             mostrarContactos();
-            
-            // Guardar en localStorage
+
             localStorage.setItem('contactos', JSON.stringify(contactos));
         }
     }
@@ -147,8 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //}
     
     mostrarContactos();
-    
-    // Efecto de líneas de libreta móviles
+
     const notebookLines = document.querySelector('.notebook-lines');
     if (notebookLines) {
         window.addEventListener('scroll', function() {
