@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    
-    // Codigo para enviar los datos en el formulario 
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Obtener datos del formulario
+
             const formData = new FormData(contactForm);
             const contacto = Object.fromEntries(formData.entries());
             
@@ -21,8 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const genero = Math.random() > 0.5 ? 'men' : 'women';
             const randomId = Math.floor(Math.random() * 99) + 1;
             contacto.imagen = `https://randomuser.me/api/portraits/${genero}/${randomId}.jpg`;
-            
-            // Guardar en localStorage
+
             const contactosGuardados = JSON.parse(localStorage.getItem('contactos')) || [];
             contactosGuardados.push(contacto);
             localStorage.setItem('contactos', JSON.stringify(contactosGuardados));
